@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8-2e3c"
+    labels:
+        app: "k8-2e3c"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kubernetes-dashboard-k8-2e3c.c6ea113f8bfd462a8c2b.centralindia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8-2e3c"
+                servicePort: 80
